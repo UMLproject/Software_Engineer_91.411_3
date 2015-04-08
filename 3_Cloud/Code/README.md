@@ -1,2 +1,9 @@
 # Directory Structure
-**Code**: place your project source code in this directory
+```
+├── app
+├── assets
+│   └── css
+│       └── animate.css
+├── index.html
+└── README.md
+```
