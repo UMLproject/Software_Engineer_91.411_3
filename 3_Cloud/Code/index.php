@@ -17,8 +17,13 @@
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="http://bootswatch.com/flatly/bootstrap.css">
     <!-- Library Scripts -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.js"></script>
+    <script src="app/js/users.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+
+    <!--CDN's-->
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>-->
+    <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.js"></script>-->
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular.js"></script>-->
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-sanitize.js"></script>-->
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap.js"></script>-->
@@ -26,17 +31,51 @@
 
 </head>
 
-
 <body>
 
 <div class="container">
     <div class="jumbotron slideInDown animated">
         <h1>Software Engineering</h1>
+
         <p>A quick cloud example page</p>
     </div>
     <hr>
     <h2 class="slideInRight animated"> Database Schema </h2>
-    <h3 class="slideInRight animated">Users</h3>
+
+    <!--USERS TABLE-->
+    <h3 class="slideInRight animated">Add New User</h3>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="app/php/users.php" method="post" class="slideInRight animated" id="newUserForm">
+                <div class="form-group">
+                    <label for="newUsername">Username</label>
+                    <input id="newUsername" type="text" class="form-control" placeholder="Enter username" autofocus/>
+                </div>
+
+                <div class="form-group">
+                    <label for="newPassword">Password</label>
+                    <input id="newPassword" type="password" class="form-control" placeholder="Enter password"/>
+                </div>
+                <div class="form-group">
+                    <label for="newPermissions">Permissions</label>
+                    <input id="newPermissions" type="password" class="form-control" placeholder="Enter password"/>
+                </div>
+                <div class="form-group">
+                    <label for="newEmail">Email</label>
+                    <input id="newEmail" type="password" class="form-control" placeholder="Enter password"/>
+                </div>
+                <div class="form-group">
+                    <label for="newComment">Comment</label>
+                    <input id="newComment" type="password" class="form-control" placeholder="Enter password"/>
+                </div>
+
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <h3 class="slideInRight animated"> Users Table </h3>
     <table class="table table-hover slideInLeft animated">
         <thead>
         <th>username</th>
