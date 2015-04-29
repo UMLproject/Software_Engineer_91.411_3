@@ -1,15 +1,22 @@
 <?php
+	// Start PHP session
 	session_start();
+	
+	// If session already open
 	if(isset($_SESSION['id']))
 	{
-		$userID = $_SESSION['id'];
-		$username = $_SESSION['username'];
-		$logged = "<li><a href='settings.php'>Settings</a></li>
+		// Show logged in menu
+		$logged = "<li><a href='dashboard.php'>Dashboard</a></li>
+				   <li><a href='about.php'>About</a></li>
+				   <li><a href='settings.php'>Settings</a></li>
 				   <li><a href='app/php/mysql_logout.php'>Logout</a></li>";
 	}
 	else
 	{
-		$logged = "<li><a href='register.php'>Register</a></li>
+		// Show logged out menu
+		$logged = "<li><a href='index.php'>Home</a></li>
+				   <li><a href='about.php'>About</a></li>
+				   <li><a href='register.php'>Register</a></li>
 				   <li><a href='login.php'>Login</a></li>";
 	}
 ?>
@@ -40,8 +47,6 @@
 		<p>Virtual Kinect Keyboard.</p>
 		<nav class="navmenu">
 			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="about.php">About</a></li>
 				<?php echo $logged ?>
 			</ul>
 		</nav>
@@ -49,8 +54,18 @@
 	<section class="container">
 		<section class="inner">
 			<article id="intro">
-				<h2>Are you ready to Kinect with the world?</h2>
-				<p>With KeyStroke, you can control your computer with a virtual keyboard, allowing you to interact with your computer in a completely new way.</p>
+				<h2>What is KeyStroke?</h2>
+				<p>KeyStroke is an easy to use, customizable virtual keyboard that you can use with a <a href="https://www.microsoft.com/en-us/kinectforwindows/">Microsoft© Kinect</a>. 
+				With KeyStroke, you get a virtual keyboard displayed on your screen just the way you want. This allows you
+				to exercise while typing anything from a school paper to a business report.</p>
+				<h2>What software do I need?</h2>
+				<p>KeyStroke is currently under development so the final requirements may change. But for now all you need
+				to do is download our executable file and you're good to go! Our executable file will install the KeyStroke
+				Virtual Keyboard application, as well as any drivers you will need to run your Kinect on you PC. We developed 
+				KeyStroke using the free <a href="http://www.unity.com/">Unity Game Engine</a> and we are currently exploring making a web application.
+				If that happens all you will need to install is a free Unity web plug-in.</p>
+				<h2>How do I get started?</h2>
+				<p>Simple! Just go to our <a href="register.php">register page</a> and sign up for <b>free</b>.</p>
 			</article>
 			 <div style="clear: both;"></div> 
 		</section>

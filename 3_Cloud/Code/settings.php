@@ -1,21 +1,21 @@
 <?php
-	// Start PHP session
+	// Start PHP session 
 	session_start();
 	
 	// If session already open
 	if(isset($_SESSION['id']))
 	{
-		// Redirect if logged in
-		header('Location: dashboard.php');
-		exit();
+		// Show logged in menu
+		$logged = "<li><a href='dashboard.php'>Dashboard</a></li>
+				   <li><a href='about.php'>About</a></li>
+				   <li><a href='settings.php'>Settings</a></li>
+				   <li><a href='app/php/mysql_logout.php'>Logout</a></li>";
 	}
 	else
 	{
-		// Show logged out menu
-		$logged = "<li><a href='index.php'>Home</a></li>
-				   <li><a href='about.php'>About</a></li>
-				   <li><a href='register.php'>Register</a></li>
-				   <li><a href='login.php'>Login</a></li>";
+		// Redirect if not logged in
+		header('Location: index.php');
+		exit();
 	}
 ?>
 
@@ -26,7 +26,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KeyStroke - Login</title>
+    <title>KeyStroke - Your Settings</title>
 
     <!-- Library Style Sheets -->
     <link rel="stylesheet" href="assets/css/animate.css">
@@ -50,21 +50,7 @@
 	</header>
 	<section class="container">
 		<section class="inner">
-			<article id="login2">
-				<h3>Login</h3>
-				<form action="app/php/mysql_login.php" method="POST">
-					<div class="form-group">
-						<label for="log_username">Username</label>
-						<input name="log_username" id="log_username" type="text" class="form-control" placeholder="Enter username" maxlength="25" required/>
-					</div>
-					<div class="form-group">
-						<label for="log_password">Password</label>
-						<input name="log_password" id="log_password" type="password" class="form-control" placeholder="Enter password" maxlength="25" required/>
-					</div>
-					<button type="submit" class="btn btn-default">Login</button>
-				</form>
-			</article>
-
+			<h3>Change Your Settings</h3>
 			 <div style="clear: both;"></div> 
 		</section>
 	</section>

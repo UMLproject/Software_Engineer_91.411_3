@@ -1,15 +1,13 @@
 <?php
-	require_once "mysql_connect.php";
+	// Start PHP session 
+	session_start();
 	
-	if($username && $userid)
-	{
-		session_unset();
-		session_destroy();
-		header('Location: ../../index.php');
-		echo "Successfully logged out";
-	}
-	else
-	{
-		header('Location: ../../index.php');
-	}
+	// Unset variables and destroy session
+	$_SESSION = array();
+	session_unset();
+	session_destroy();
+	
+	// Redirect
+	header('Location: ../../login.php');
+	exit();
 ?>

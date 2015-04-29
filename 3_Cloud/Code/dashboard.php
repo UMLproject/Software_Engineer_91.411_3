@@ -1,15 +1,25 @@
 <?php
+	// Start PHP session
 	session_start();
+	
+	// If session already open
 	if(isset($_SESSION['id']))
 	{
+		// Save user variables to show
 		$userID = $_SESSION['id'];
 		$username = $_SESSION['username'];
-		$logged = "<li><a href='settings.php'>Settings</a></li>
+		
+		// Show logged in menu
+		$logged = "<li><a href='dashboard.php'>Dashboard</a></li>
+				   <li><a href='about.php'>About</a></li>
+				   <li><a href='settings.php'>Settings</a></li>
 				   <li><a href='app/php/mysql_logout.php'>Logout</a></li>";
 	}
 	else
 	{
+		// Redirect if not logged in
 		header('Location: index.php');
+		exit();
 	}
 ?>
 
@@ -38,15 +48,13 @@
 		<p>Virtual Kinect Keyboard.</p>
 		<nav class="navmenu">
 			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="about.php">About</a></li>
 				<?php echo $logged ?>
 			</ul>
 		</nav>
 	</header>
 	<section class="container">
 		<section class="inner">
-			<h3>Welcome to your Dashboard,<br /><?php echo $username ?>.</h3>
+			<h3>Welcome to your Dashboard, <?php echo $username ?>.</h3>
 			 <div style="clear: both;"></div> 
 		</section>
 	</section>
