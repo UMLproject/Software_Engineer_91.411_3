@@ -10,6 +10,14 @@
 	$password = $_POST['password'];
 	$email = $_POST['email'];
 	
+	// Protect from SQL injection
+	$username = stripcslashes($username);
+	$password = stripcslashes($password);
+	$email = stripcslashes($email);
+	$username = mysql_real_escape_string($username);
+	$password = mysql_real_escape_string($password);
+	$email = mysql_real_escape_string($email);
+	
 	// Check if username already in database
 	$sql = "SELECT * FROM users WHERE Username='$username'";
 	$query = mysql_query($sql);
@@ -19,6 +27,7 @@
 	if($numrows > 0)
 	{
 		echo "Username already taken. <a href='../../register.php'>Try again</a>.";
+		mysql_close($conn);
 		exit();
 	}
 	else
@@ -32,6 +41,7 @@
 		if($numrows > 0)
 		{
 			echo "Email already in use. <a href='../../register.php'>Try again</a>.";
+			mysql_close($conn);
 			exit();
 		}
 		else
@@ -70,12 +80,14 @@
 				else
 				{
 					echo "Automatic email confirmation not sent. Just an error, but don't worry. <a href='../../login.php'>You can still log in here</a>.";
+					mysql_close($conn);
 					exit();
 				}
 			}
 			else
 			{
 				echo "Account couldn't be created. <a href='../../register.php'>Try again</a>.";
+				mysql_close($conn);
 				exit();
 			}
 		}

@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="http://bootswatch.com/flatly/bootstrap.css">
 	
     <!-- Library Scripts -->
+    <script language="javascript" src="app/js/validateChange.js"></script>
     <script src="app/js/users.js"></script>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.js"></script>
@@ -50,7 +51,33 @@
 	</header>
 	<section class="container">
 		<section class="inner">
-			<h3>Change Your Settings</h3>
+			<article id="settings">
+				<h3>Change Your Settings</h3>
+				<form action="app/php/mysql_settings.php" method="POST" onsubmit="return validateChange()">
+					<div class="form-group">
+						<label for="oldPassword">Old Password</label>
+						<input name="oldPassword" id="password" type="password" class="form-control" placeholder="Enter password" maxlength="25" required/>
+					</div>
+					<div class="form-group">
+						<label for="NewPassword">New Password</label>
+						<input name="NewPassword" id="password" type="password" class="form-control" placeholder="Enter new password" maxlength="25" />
+					</div>
+					<div class="form-group">
+						<label for="checkNewPassword">Confirm New Password</label>
+						<input name="checkNewPassword" id="checkPassword" type="password" class="form-control" placeholder="Confirm new password" />
+					</div>
+					<div class="form-group">
+						<label for="email">Change Email</label>
+						<input name="email" id="email" type="email" class="form-control" placeholder="Change Email" maxlength="100" />
+					</div>
+					<div class="form-group">
+						<label for="checkEmail">Confirm Changed Email</label>
+						<input name="checkEmail" id="checkEmail" type="email" class="form-control" placeholder="Confirm changed email" />
+					</div>
+					<button type="submit" class="btn btn-default">Change Settings</button>
+				</form>
+			</article>
+			
 			 <div style="clear: both;"></div> 
 		</section>
 	</section>

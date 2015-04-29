@@ -1,4 +1,6 @@
-function validateForm() {
+function validateForm()
+{
+	// Get elements to compare
     var pass1 = document.getElementById("password").value;
     var pass2 = document.getElementById("checkPassword").value;
     var email1 = document.getElementById("email").value;
@@ -6,6 +8,7 @@ function validateForm() {
    
    var ok = true;
 	
+	// Compare elements
     if (pass1 != pass2)
 	{
 		document.getElementById("checkPassword").style.borderColor = "#ff0000";

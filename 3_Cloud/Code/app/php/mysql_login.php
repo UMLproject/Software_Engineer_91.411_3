@@ -34,12 +34,14 @@
 		$_SESSION["username"] = $rows['Username'];
 		
 		// Redirect
+		mysql_close($conn);
 		header('Location: ../../dashboard.php');
 		exit();
 	}
 	else
 	{
 		// Redirect
+		mysql_close($conn);
 		header('Location: ../../login.php');
 		exit();
 	}
