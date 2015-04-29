@@ -1,0 +1,115 @@
+body
+{
+	background: url(../img/blur-city.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+footer
+{
+	margin-top: 1%;
+}
+
+.navmenu
+{
+	width: 100%;
+}
+.navmenu ul, .navmenu li
+{
+	margin: 0;
+	padding: 0;
+}
+.navmenu ul
+{
+	list-style: none;
+	width: 100%;
+	height: auto;
+}
+.navmenu li
+{
+	float: left;
+	position: relative;
+	width: auto;
+}
+.navmenu a
+{
+	border-radius: 15px 15px 0 0;
+	background: #30A6E6;
+	color: #FFFFFF;
+	display: block;
+	font: bold 12px/20px sans-serif;
+	padding: 9px 50px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-transition: all .25s ease;
+	-moz-transition: all .25s ease;
+	-ms-transition: all .25s ease;
+	-o-transition: all .25s ease;
+	transition: all .25s ease;
+}
+.navmenu li:hover a
+{
+	background: #798d8f;
+}
+
+.container
+{
+	margin: auto;
+	width: 100%;
+	padding: 2% 15% 2% 15%;
+}
+
+.inner
+{
+	padding: 3%;
+	border-radius: 30px;
+	height: 100%;
+	background: white;
+	background: rgba(256, 256, 256, .75);
+	margin: auto;
+}
+
+#intro
+{
+	width: 100%;
+	height: 60%;
+}
+
+#register 
+{
+	height: auto;
+	width: 55%;
+	display: inline-block;
+	padding-left: 3%;
+	float: left;
+}
+#register:invalid 
+{
+     border: 2px solid #ff0000;
+}
+#register2
+{
+	width: 70%;
+	margin: auto;
+}
+#register2:invalid 
+{
+     border: 2px solid #ff0000;
+}
+
+#login
+{
+	height: auto;
+	width: 35%;
+	display: inline-block;
+	margin: auto;
+	padding-right:3%;
+	float: right;
+}
+#login2
+{
+	width: 70%;
+	margin: auto;
+}
