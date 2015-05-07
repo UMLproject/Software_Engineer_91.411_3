@@ -1,1 +1,4 @@
 .DS_Store
+
+#For Sensor group
+1_Sensor/Code/KinectSandbox/Temp/*
